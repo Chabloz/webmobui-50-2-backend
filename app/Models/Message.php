@@ -21,9 +21,19 @@ class Message extends Model
      * @var array<int, string>
      */
     protected $hidden = [
-
+        'updated_at',
     ];
 
+    // belongsTo
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
+    // get all message after a timestamp
+    public function getAllAfterTimestamp($timestamp)
+    {
+        return $this->where('created_at', '>', $timestamp)->get();
+    }
 
 }

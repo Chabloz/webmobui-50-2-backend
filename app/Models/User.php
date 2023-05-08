@@ -38,4 +38,10 @@ class User extends Authenticatable
     protected $casts = [
         'last_activity_at' => 'datetime',
     ];
+
+    // hasMany
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 }

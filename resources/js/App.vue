@@ -1,6 +1,8 @@
 <script setup>
   import { ref } from 'Vue';
   const count = ref(0);
+  fetch('/api/msg/get');
+
 </script>
 
 <template>

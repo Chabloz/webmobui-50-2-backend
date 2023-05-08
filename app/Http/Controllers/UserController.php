@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User as ModelsUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class User extends Controller
+class UserController extends Controller
 {
 
     public function login(Request $request)
@@ -20,7 +20,7 @@ class User extends Controller
             ], 401);
         }
 
-        $user = ModelsUser::firstOrCreate([
+        $user = User::firstOrCreate([
             'name' => $username,
             'password' => '',
         ]);

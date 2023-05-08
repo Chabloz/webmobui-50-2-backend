@@ -17,7 +17,12 @@ Route::get('/', function () {
     return view('vuetest');
 });
 
-Route::get('/api/user/login', [App\Http\Controllers\User::class, 'login']);
+/* API */
 
-Route::get('/api/user/logout', [App\Http\Controllers\User::class, 'logout'])
-    ->middleware('auth.chat');
+Route::get('/api/user/login', [App\Http\Controllers\UserController::class, 'login']);
+
+Route::group(['middleware' => 'auth.chat'], function () {
+    Route::get('/api/user/logout', [App\Http\Controllers\UserController::class, 'logout']);
+    Route::get('/api/msg/add', [App\Http\Controllers\MessageController::class, 'add']);
+    Route::get('/api/msg/get', [App\Http\Controllers\MessageController::class, 'get']);
+});

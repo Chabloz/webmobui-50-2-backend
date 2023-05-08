@@ -14,6 +14,8 @@ class AuthenticateChat extends Middleware
     protected function redirectTo(Request $request): ?string
     {
         header('Content-Type: application/json');
+        // add 401 error code
+        http_response_code(401);
         die(json_encode([
             'status' => 'error',
             'msg' => 'Unauthorized'
