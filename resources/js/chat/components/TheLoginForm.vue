@@ -14,25 +14,28 @@ function onReset () {
 </script>
 
 <template>
-  <div class="q-pa-md" style="max-width: 400px">
-    <q-form
-      @submit="onSubmit"
-      @reset="onReset"
-      class="q-gutter-md"
-    >
-      <q-input
-        filled
-        v-model="name"
-        label="Username *"
-        hint="Your username for the chat"
-        lazy-rules
-        :rules="[ val => val && val.match(/^[a-z]+$/i) && val.length > 0 || 'Alphabetic characters only']"
-      />
+  <div class="column items-center">
+    <h1 class="row text-h2">Chat IM</h1>
+    <div class="row full-width justify-center">
+      <q-form
+        @submit="onSubmit"
+        @reset="onReset"
+        class="col-6 q-gutter-md"
+      >
+        <q-input
+          filled
+          v-model="name"
+          label="Username *"
+          hint="Your username for the chat"
+          lazy-rules
+          :rules="[ val => val && val.match(/^[a-z]+$/i) && val.length > 0 || 'Alphabetic characters only']"
+        />
 
-      <div>
-        <q-btn label="Submit" type="submit" color="primary"/>
-        <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
-      </div>
-    </q-form>
+        <div>
+          <q-btn label="Login" type="submit" color="primary"/>
+          <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+        </div>
+      </q-form>
+    </div>
   </div>
 </template>
