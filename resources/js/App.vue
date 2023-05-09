@@ -1,5 +1,5 @@
 <script setup>
-  import { ref } from 'Vue';
+  import { ref } from 'vue';
   const count = ref(0);
   fetch('/api/msg/get');
 
