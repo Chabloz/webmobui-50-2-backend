@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laravel</title>
+        <script>
+            const BACK_DATA = <?php echo json_encode($data); ?>;
+        </script>
         @vite('resources/js/app.js')
     </head>
     <body>

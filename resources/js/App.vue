@@ -1,12 +1,12 @@
 <script setup>
-  import { ref } from 'Vue';
-  const count = ref(0);
-  fetch('/api/msg/get');
-
+  import TheFormLogin from './components/TheFormLogin.vue';
+  import TheChat from './components/TheChat.vue';
+  console.log(BACK_DATA);
 </script>
 
 <template>
-  <h1>Hello Vue</h1>
+  <the-form-login></the-form-login>
+  <the-chat></the-chat>
 </template>
 
 <style scoped>

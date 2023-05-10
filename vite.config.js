@@ -2,6 +2,9 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 
+// FILE: vite.config.js
+import { quasar} from '@quasar/vite-plugin'
+
 export default defineConfig({
     plugins: [
         laravel(['resources/js/app.js']),
@@ -23,5 +26,6 @@ export default defineConfig({
                 },
             },
         }),
+        quasar(),
     ],
 });
